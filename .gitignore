@@ -31,3 +31,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore .idea files and key file
+.idea/
+config/credentials.yml.enc
+
