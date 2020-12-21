@@ -35,4 +35,4 @@
 # Ignore .idea files and key file
 .idea/
 config/credentials.yml.enc
-config/credentials.yml.enc
+
