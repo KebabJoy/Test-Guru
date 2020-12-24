@@ -36,3 +36,5 @@
 .idea/
 config/credentials.yml.enc
 
+*.yml
+Gemfile.lock
