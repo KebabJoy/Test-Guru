@@ -5,3 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+categories = Category.create!([
+                               { title: "computer sciense" },
+                               { title: "chemistry" }
+                               ])
+
+users = User.create!([
+                       { name: 'Bob' },
+                       { name: 'Alice' }
+                     ])
+
+tests = Test.create!([
+                      { title: "icpc", level: 7, category_id: categories[0].id, user: users[1].id },
+                      { title: "MIPT olymp", level: 4, categories[1].id, user: users[0].id }
+                      ])
+
+
+questions = Questions.create!([
+                            { title: "The Knapsack problem", test_id: tests[0].id },
+                            { title: "What color is NaOH?", test_id: tests[1].id  }
+                            ])
+
+answers = Answer.create!({
+                          { title: "some code", correct: true, questions_id: questions[0].id}
+                          { title: "4", questions_id: questions[0].id },
+                          { title: "White", correct: true, questions_id: questions[1].id }
+                          })
+
+user_tests = UserTest.create!([
+                               { user_id: 1, test_id: tests[1].id },
+                               { user_id: 2, test_id: tests[0].id }
+                               ])
