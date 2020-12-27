@@ -24,8 +24,8 @@ tests = Test.create!([
 
 
 questions = Questions.create!([
-                            { title: "The Knapsack problem", test_id: tests[0].id },
-                            { title: "What color is NaOH?", test_id: tests[1].id  }
+                            { body: "The Knapsack problem", test_id: tests[0].id },
+                            { body: "What color is NaOH?", test_id: tests[1].id  }
                             ])
 
 answers = Answer.create!({
