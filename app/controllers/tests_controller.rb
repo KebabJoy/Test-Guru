@@ -1,11 +1,11 @@
 class TestsController < ApplicationController
 
-    def start
-        render plain: "0_o"
-    end
-
     def index
-        render plain: "All tests"
+        render json: { tests: Test.all }
+    end
+    
+    def show
+       @test = Test.find(params[:id]) 
     end
 
 end
