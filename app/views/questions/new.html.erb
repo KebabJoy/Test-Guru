@@ -13,7 +13,7 @@
 
 <h1>Delete question</h1>
 
-<form action="/questions/<%= params[:question_id] %>" method="post">
+<form action="/questions/<%= params[:question_id] %>" method="delete">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   <input type="hidden" name="question[:title]" value="delete">
 
