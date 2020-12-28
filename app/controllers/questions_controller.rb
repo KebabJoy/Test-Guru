@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :set_test
-  before_action :set_question
+  before_action :set_test, only: %i[create new]
+  before_action :set_question, only: %i[show delete]
   
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
       
@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
   end
   
   def new
-    @question = Question.new
+    question = @test.questions.new(question_params)
   end
   
   def create
@@ -27,8 +27,8 @@ class QuestionsController < ApplicationController
   end
   
   def delete
-    Question.find(params[:test_id]).destroy
-    redirect_to :action => 'list'
+    @question.destroy
+    redirect_to :index
   end
   
 
@@ -47,6 +47,6 @@ class QuestionsController < ApplicationController
   end
   
   def rescue_with_question_not_found
-    render plain: "#{params[:title]} not found" 
+    render plain: "Such test was not found" 
   end
 end
