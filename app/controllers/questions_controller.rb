@@ -4,8 +4,8 @@ class QuestionsController < ApplicationController
     
     rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
     
-    def list
-        @test.questions.all
+    def show 
+       render plain: @question.body
     end
     
     def index
@@ -26,14 +26,20 @@ class QuestionsController < ApplicationController
         @question = Test.new(question_params)
         
         if @question.save
-            redirect_to :action => 'list'
+            redirect_to :index
         else
-            render :action => 'new'
+            render :new
         end
     end
     
+    private
+    
     def question_params
         params.require(:question).permit(:title)
+    end
+    
+    def find_question
+        @question = Question.find(params[:id])
     end
     
     def find_test
