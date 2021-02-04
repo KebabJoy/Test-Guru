@@ -8,7 +8,7 @@
 
 
 categories = Category.create!([
-                               { title: "computer sciense" },
+                               { title: "computer science" },
                                { title: "chemistry" }
                                ])
 
@@ -18,8 +18,8 @@ users = User.create!([
                      ])
 
 tests = Test.create!([
-                      { title: "icpc", level: 7, category_id: categories[0].id, author: users[1].id },
-                      { title: "MIPT olymp", level: 4, categories[1].id, author: users[0].id }
+                      { title: "ICPC", level: 7, category_id: categories[0].id, author_id: users[1].id },
+                      { title: "MIPT olympiad", level: 4, category_id: categories[1].id, author_id: users[0].id }
                       ])
 
 
@@ -28,11 +28,11 @@ questions = Questions.create!([
                             { body: "What color is NaOH?", test_id: tests[1].id  }
                             ])
 
-answers = Answer.create!({
-                          { title: "some code", correct: true, questions_id: questions[0].id}
+answers = Answer.create!([
+                          { title: "some code", correct: true, questions_id: questions[0].id},
                           { title: "4", questions_id: questions[0].id },
                           { title: "White", correct: true, questions_id: questions[1].id }
-                          })
+                         ])
 
 user_tests = UserTest.create!([
                                { user_id: 1, test_id: tests[1].id },
