@@ -13,14 +13,14 @@ class QuestionsController < ApplicationController
   end
   
   def new
-    question = @test.questions.new(question_params)
+    @question = @test.questions.new(question_params)
   end
   
   def create
-    @question = Question.new(question_params)
+    @question = :new
       
     if @question.save
-      redirect_to :index
+      redirect_to @question
     else
       render :new
     end
@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
   
   def delete
     @question.destroy
-    redirect_to :index
+    redirect_to @question
   end
   
 

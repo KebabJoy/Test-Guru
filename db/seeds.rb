@@ -18,23 +18,23 @@ users = User.create!([
                      ])
 
 tests = Test.create!([
-                      { title: "ICPC", level: 7, category_id: categories[0].id, author_id: users[1].id },
-                      { title: "MIPT olympiad", level: 4, category_id: categories[1].id, author_id: users[0].id }
+                      { title: "ICPC", level: 7, category: categories[0], author: users[1] },
+                      { title: "MIPT olympiad", level: 4, category: categories[1], author: users[0] }
                       ])
 
 
-questions = Questions.create!([
+questions = Question.create!([
                             { body: "The Knapsack problem", test_id: tests[0].id },
                             { body: "What color is NaOH?", test_id: tests[1].id  }
                             ])
 
 answers = Answer.create!([
-                          { title: "some code", correct: true, questions_id: questions[0].id},
-                          { title: "4", questions_id: questions[0].id },
-                          { title: "White", correct: true, questions_id: questions[1].id }
+                          { title: "some code", correct: true, question: questions[0]},
+                          { title: "4", question: questions[0] },
+                          { title: "White", correct: true, question: questions[1] }
                          ])
 
 user_tests = UserTest.create!([
-                               { user_id: 1, test_id: tests[1].id },
-                               { user_id: 2, test_id: tests[0].id }
-                               ])
+                               { user_id: users[0].id, test_id: tests[1].id },
+                              { user_id: users[1].id, test_id: tests[0].id }
+                             ])
