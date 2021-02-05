@@ -13,11 +13,11 @@ class QuestionsController < ApplicationController
   end
   
   def new
-    @question = @test.questions.new(params[:title])
+    @question = @test.questions.new
   end
   
   def create
-    @question = @test.questions.new
+    @question = @test.questions.new(question_params)
       
     if @question.save
       redirect_to @question
