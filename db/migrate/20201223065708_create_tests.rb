@@ -8,6 +8,6 @@ class CreateTests < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_foreign_key :tests, :users, column: :id
+    add_reference :tests, :author, foreign_key: { to_table: :users }
   end
 end
