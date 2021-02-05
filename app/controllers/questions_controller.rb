@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
       
   def index
-    render json: @test.questions
+    render json: { questions: @test.questions}
   end
   
   def show 
@@ -13,11 +13,11 @@ class QuestionsController < ApplicationController
   end
   
   def new
-    @question = @test.questions.new(question_params)
+    @question = @test.questions.new
   end
   
   def create
-    @question = :new
+    @question = @test.question.new(question_params)
       
     if @question.save
       redirect_to @question
