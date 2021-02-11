@@ -8,7 +8,9 @@ class QuestionsController < ApplicationController
     @questions = Question.where(test_id: params[:test_id])
   end
 
-  def edit; end
+  def edit
+    @question = Question.find(params[:id])
+  end
 
   def show 
     render plain: @question.body

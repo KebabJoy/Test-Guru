@@ -1,5 +1,5 @@
 <div>
-  <%= Time.current.year %>
+  <%= current_year %>
 </div>
 <div>
   <h2>Автор:</h2><br>
@@ -8,10 +8,10 @@
 <div>
   <div>
     <p>Ссылка на проект:</p>
-    <a href="https://github.com/KebabJoy/Test-Guru" target="_blank">Test-Guru</a>
+    <%= github_url('Test-Guru', 'https://github.com/KebabJoy/Test-Guru/tree/7th_task')%>
   </div>
   <div>
-    <a href="thinknetica.com">Учебный проект в онлайн-школе Thinknetica </a>
+    <a href="thinknetica.com">Учебный проект в онлайн-школе Thinknetica </a> <!--можно в хэлпер засунуть, но в задании этого не сказано-->
     <p>для создания и прохождения тестов</p>
   </div>
 </div>

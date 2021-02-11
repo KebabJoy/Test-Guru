@@ -1,0 +1,26 @@
+<%= form_for  [@test, @question] do |form| %>
+  <% if @question.errors.present? %>
+    <div>
+      <h2>Errors detected </h2>
+      <ul>
+        <% @question.errors.full_messages.each do |message| %>
+          <li><% message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <%end %>
+
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_field :body, id: :question_body %>
+  </p><br>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+  <p>
+    <%= form.label :test_id %>:
+    <%= form.collection_select :test_id, Test.all, :id, :title, prompt: true %>
+  </p>
+<% end %>
