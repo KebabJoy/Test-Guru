@@ -1,4 +1,37 @@
-<h1>Hello World!</h1>
+<h2>Test ID:<%= @test.id %></h2>
+<%= button_to 'Back to Tests List', tests_path, method: :get %>
+<p><%=@test.title %></p>
+<p>Level: <%= @test.level %></p>
 
+<div style="width: 50%; margin: 0 auto; text-align: center;">
+  <table border="1">
+    <tr>
+      <th>Question ID:</th>
+      <th>Body: </th>
+      <th>Edit</th>
+    </tr>
+    <% @test.questions.each do |q|%>
+      <tr>
+        <td>
+          <%= q.id %>
+        </td>
+        <td>
+          <%= link_to q.body, q %>
+        </td>
+        <td><%= button_to 'Edit', edit_question_path(q), method: :get %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td>
+        <%= button_to 'Create New Test', new_test_path, method: :get %>
+      </td>
+      <td>
+        <%= button_to "Create New Question for Test #{@test.id}", new_test_question_path(@test), method: :get %>
+      </td>
+    </tr>
+  </table>
+</div>
 
-
+<div>
+  <%= button_to 'Edit Test', edit_test_path(@test), method: :get%>
+</div>

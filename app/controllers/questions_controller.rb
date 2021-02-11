@@ -5,9 +5,11 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
       
   def index
-    render json: { questions: Question.all }
+    @questions = Question.where(test_id: params[:test_id])
   end
-  
+
+  def edit; end
+
   def show 
     render plain: @question.body
   end
@@ -30,18 +32,17 @@ class QuestionsController < ApplicationController
     @question.destroy
     redirect_to @question
   end
-  
 
   private
   
   def question_params
-    params.require(:question).permit(:title)
+    params.require(:question).permit(:body, :test_id)
   end
   
   def set_question
     @question = Question.find(params[:id])
   end
-  
+
   def set_test
     @test = Test.find(params[:test_id])
   end
