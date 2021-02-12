@@ -1,0 +1,13 @@
+<% @test.questions.each do |question|%>
+  <tr>
+    <td>
+      <%= question.id %>
+    </td>
+    <td>
+      <%= link_to question.body, question %>
+    </td>
+    <td>
+      <%= @test.author.name %>
+    </td>
+  </tr>
+<% end %>

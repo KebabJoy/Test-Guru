@@ -1,11 +1,14 @@
 class TestsController < ApplicationController
+  before_action :set_test, only: %i[show edit update destroy]
+
 
   def index
     @tests = Test.all
   end
   
   def show
-    @test = Test.find(params[:id])
+    @test
+    @questions = Question.where(test_id: params[:test_id])
   end
 
   def new
@@ -13,7 +16,7 @@ class TestsController < ApplicationController
   end
 
   def edit
-    @test = Test.find(params[:id])
+    @test
   end
 
   def create
@@ -27,17 +30,15 @@ class TestsController < ApplicationController
   end
 
   def update
-    @test = Test.find(params[:id])
-
-    if @test.save
+    if @test.update(test_params)
       redirect_to @test
     else
-      render :new
+      render :edit
     end
   end
 
   def destroy
-    @test = Test.find(params[:id])
+    @test
 
     @test.destroy
     redirect_to tests_path
@@ -45,7 +46,11 @@ class TestsController < ApplicationController
 
   private
 
+  def set_test
+    @test = Test.find(params[:id])
+  end
+
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :author_id)
   end
 end

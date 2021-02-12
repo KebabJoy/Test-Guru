@@ -1,15 +1,5 @@
-<%= form_for  [@test, @question] do |form| %>
-  <% if @question.errors.present? %>
-    <div>
-      <h2>Errors detected </h2>
-      <ul>
-        <% @question.errors.full_messages.each do |message| %>
-          <li><% message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <%end %>
-
+<%= form_with  model: [@test,@question] do |form| %>
+  <%= render 'shared/errors', resource: @question %>
   <p>
     <%= form.label :body %><br>
     <%= form.text_field :body, id: :question_body %>
@@ -19,8 +9,4 @@
     <%= form.submit %>
   </p>
 
-  <p>
-    <%= form.label :test_id %>:
-    <%= form.collection_select :test_id, Test.all, :id, :title, prompt: true %>
-  </p>
 <% end %>

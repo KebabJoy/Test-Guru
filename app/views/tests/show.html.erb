@@ -7,17 +7,9 @@
     <tr>
       <th>Question ID:</th>
       <th>Body: </th>
+      <th>Author: </th>
     </tr>
-    <% @test.questions.each do |q|%>
-      <tr>
-        <td>
-          <%= q.id %>
-        </td>
-        <td>
-          <%= link_to q.body, q %>
-        </td>
-      </tr>
-    <% end %>
+    <%= render 'questions' %>
   </table>
 </div>
 <%= link_to 'Back', tests_path%>
