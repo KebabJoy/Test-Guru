@@ -8,9 +8,7 @@ class QuestionsController < ApplicationController
     @questions = @test.questions
   end
 
-  def edit
-    @question
-  end
+  def edit; end
 
   def show 
     render plain: @question.body
@@ -31,8 +29,6 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question
-
     if @question.update(question_params)
       redirect_to @question
     else
@@ -48,7 +44,7 @@ class QuestionsController < ApplicationController
   private
   
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
   
   def set_question

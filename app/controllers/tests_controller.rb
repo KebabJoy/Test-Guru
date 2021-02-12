@@ -6,10 +6,7 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
   
-  def show
-    @test
-    @questions = Question.where(test_id: params[:test_id])
-  end
+  def show; end
 
   def new
     @test = Test.new
@@ -38,8 +35,6 @@ class TestsController < ApplicationController
   end
 
   def destroy
-    @test
-
     @test.destroy
     redirect_to tests_path
   end
