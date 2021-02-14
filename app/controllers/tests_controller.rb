@@ -12,9 +12,7 @@ class TestsController < ApplicationController
     @test = Test.new
   end
 
-  def edit
-    @test
-  end
+  def edit; end
 
   def create
     @test = Test.new(test_params)
