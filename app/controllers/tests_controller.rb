@@ -16,7 +16,7 @@ class TestsController < ApplicationController
 
   def create
     @test = Test.new(test_params)
-
+    @test.author = User.create(name: "УНИКАЛЬНЫЙ АВТОР")
     if @test.save
       redirect_to @test
     else
@@ -44,6 +44,6 @@ class TestsController < ApplicationController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 end
