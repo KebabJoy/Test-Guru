@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
   def edit; end
 
   def show 
-    render plain: @question.body
+    @answers = @question.answers
   end
   
   def new
