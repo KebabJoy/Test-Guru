@@ -16,7 +16,7 @@ class TestsController < ApplicationController
 
   def create
     @test = Test.new(test_params)
-    @test.author = User.create(name: "УНИКАЛЬНЫЙ АВТОР")
+    @test.author = User.first
     if @test.save
       redirect_to @test
     else
