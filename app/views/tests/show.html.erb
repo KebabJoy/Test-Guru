@@ -1,4 +1,19 @@
-<h1>Hello World!</h1>
+<h2>Test ID:<%= @test.id %></h2>
+<p><%=@test.title %></p>
+<p>Level: <%= @test.level %></p>
 
+<div>
+  <p>Test's author <%= @test.author.name %></p>
+  <table border="1">
+    <tr>
+      <th>Question ID:</th>
+      <th>Body: </th>
+    </tr>
+    <%= render partial: 'questions', collection: @test.questions %>
+  </table>
+</div>
 
-
+<%= link_to 'Back', tests_path %>
+<div>
+  <%= button_to 'Edit Test', edit_test_path(@test)%>
+</div>
