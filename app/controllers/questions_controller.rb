@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_test, only: %i[create new]
-  before_action :set_question, only: %i[show delete edit update]
+  before_action :set_question, only: %i[show destroy edit update]
   
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -32,9 +32,9 @@ class QuestionsController < ApplicationController
     end
   end
   
-  def delete
+  def destroy
     @question.destroy
-    redirect_to @question
+    redirect_to test_path(@question.test)
   end
 
   private
