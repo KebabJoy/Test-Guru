@@ -1,6 +1,14 @@
-<li>
-  <%= answer.title %><br>
-  <%= link_to 'Show', answer_path(answer)%> |
-  <%= link_to 'Edit', edit_answer_path(answer)%> |
-  <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' } %>
-</li>
+<tr>
+  <td>
+    <%= answer.title %><br>
+  </td>
+  <td>
+    <%= link_to 'Show', answer_path(answer)%>
+  </td>
+  <td>
+    <%= link_to 'Edit', edit_answer_path(answer)%>
+  </td>
+  <td>
+    <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>
