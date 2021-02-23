@@ -7,7 +7,7 @@ class User < ApplicationRecord
     validates :name, presence: true
                                 
     def tests_passed(lvl)
-        tests.where(level: lvl) # По идее за счет ассоциации пользователь имеет только свои тесты
+        tests.where(level: lvl)
     end
 
     def test_passage(test)

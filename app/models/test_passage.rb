@@ -8,12 +8,14 @@ class TestPassage < ApplicationRecord
 
   scope :questions_left, -> {test.questions.order(:id).where('id > ?', current_question.id)}
 
+  SUCCESS_RATE = 85.0.freeze
+
   def current_question_number
     test.questions.order(:id).where('id <= ?', current_question.id).count
   end
 
   def success?
-    stats > 85.0
+    stats > SUCCESS_RATE
   end
 
   def test_result
@@ -35,6 +37,9 @@ class TestPassage < ApplicationRecord
   private
 
   def correct_answer?(answer_ids)
+    if answer_ids.nil?
+      return false
+    end
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
