@@ -6,14 +6,14 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_update :set_next_question
 
-  SUCCESS_RATE = 85.0.freeze
+  SUCCESS_RATE = 85.0
 
   def current_question_number
     test.questions.order(:id).where('id <= ?', current_question.id).count
   end
 
   def success?
-    test_result > SUCCESS_RATE
+    test_result >= SUCCESS_RATE
   end
 
   def test_result
@@ -43,9 +43,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    if answer_ids.nil?
-      return false
-    end
+    return unless answer_ids
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
