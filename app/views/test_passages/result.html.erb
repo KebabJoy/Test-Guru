@@ -8,10 +8,10 @@
     </div>
   <% else %>
     <div class="fail">
-      <%= "You must get more than 85%, you got #{test_result}" %>
+      <%= "You must get more than 85%, you got #{@test_passage.test_result}" %>
     </div>
   <% end %>
 </h2>
 
 <br>
-<%= button_to 'Test List', tests_path %>
+<%= button_to 'Test List', tests_path, method: :get %>

@@ -35,3 +35,6 @@ answers = Answer.create!([
                           { title: "White", correct: true, question: questions[1] }
                          ])
 
+test_passages = TestPassage.create!([
+                                       {user: users[0], test: tests[0], current_question: questions[0]}
+                                       ])

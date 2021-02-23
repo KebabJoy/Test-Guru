@@ -6,8 +6,6 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_update :set_next_question
 
-  scope :questions_left, -> {test.questions.order(:id).where('id > ?', current_question.id)}
-
   SUCCESS_RATE = 85.0.freeze
 
   def current_question_number
@@ -15,7 +13,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    stats > SUCCESS_RATE
+    test_result > SUCCESS_RATE
   end
 
   def test_result
@@ -34,7 +32,15 @@ class TestPassage < ApplicationRecord
     questions_left.first
   end
 
+  def completed?
+    current_question.nil?
+  end
+
   private
+
+  def questions_left
+    test.questions.order(:id).where('id > ?', current_question.id)
+  end
 
   def correct_answer?(answer_ids)
     if answer_ids.nil?
