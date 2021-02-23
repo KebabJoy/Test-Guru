@@ -60,8 +60,4 @@ class TestPassage < ApplicationRecord
   def correct_answers
     current_question.answers.correct
   end
-
-  def remaining_questions
-    questions_left.count
-  end
 end
