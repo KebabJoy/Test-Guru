@@ -28,3 +28,13 @@ questions = Question.create!([
                             { body: "What color is NaOH?", test_id: tests[1].id  }
                             ])
 
+
+Answer.create!([
+                          { title: "some code", correct: true, question: questions[0]},
+                          { title: "4", question: questions[0] },
+                          { title: "White", correct: true, question: questions[1] }
+                         ])
+
+TestPassage.create!([
+                                       {user: users[0], test: tests[0], current_question: questions[0]}
+                                       ])

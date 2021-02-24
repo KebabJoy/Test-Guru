@@ -1,0 +1,16 @@
+<%= form_with model: model  do |form| %>
+  <%= render 'shared/errors', resource: @answer %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, id: :answer_title %>
+  </p><br>
+
+  <p>
+    <%= form.label :correct %>
+    <%= form.check_box :correct, id: :answer_correct %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
