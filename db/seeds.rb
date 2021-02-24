@@ -29,12 +29,12 @@ questions = Question.create!([
                             ])
 
 
-answers = Answer.create!([
+Answer.create!([
                           { title: "some code", correct: true, question: questions[0]},
                           { title: "4", question: questions[0] },
                           { title: "White", correct: true, question: questions[1] }
                          ])
 
-test_passages = TestPassage.create!([
+TestPassage.create!([
                                        {user: users[0], test: tests[0], current_question: questions[0]}
                                        ])
