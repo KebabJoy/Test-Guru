@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <div class="nav user">Welcome, <b><%= current_user.email %></b> Guru</div>
+    <% end %>
     <%= yield %>
   </body>
 
