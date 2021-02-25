@@ -7,6 +7,9 @@ class User < ApplicationRecord
     has_many :test_passages
     has_many :tests, through: :test_passages
 
+    validates :name, presence: true
+    validates :email, presence: true, uniqueness: true, format: /\w+[@]+\w+[.]+\w/
+
     has_secure_password
 
     def tests_passed(lvl)
