@@ -1,8 +1,7 @@
 class SessionsController < Devise::SessionsController
 
-  after_action :greeting_message, only: :create
-
-  def greeting_message
+  def create
+    super
     flash[:notice] = "Hello! #{current_user.first_name} #{current_user.last_name}!"
   end
 end
