@@ -13,8 +13,8 @@ categories = Category.create!([
                                ])
 
 users = User.create!([
-                       { name: 'Bob', email: 'qwer@mail.ru', password_digest: BCrypt::Password.create('qwerty') },
-                       { name: 'Alice',email: 'son@mail.ru', password_digest: BCrypt::Password.create('12345') }
+                       { email: 'qwer@mail.ru', password: 'qwerty', password_confirmation: 'qwerty' },
+                       { email: 'son@mail.ru', password: '123456', password_confirmation: '123456'}
                      ])
 
 tests = Test.create!([
@@ -30,11 +30,11 @@ questions = Question.create!([
 
 
 Answer.create!([
-                          { title: "some code", correct: true, question: questions[0]},
-                          { title: "4", question: questions[0] },
-                          { title: "White", correct: true, question: questions[1] }
-                         ])
+                { title: "some code", correct: true, question: questions[0]},
+                { title: "4", question: questions[0] },
+                { title: "White", correct: true, question: questions[1] }
+               ])
 
 TestPassage.create!([
-                                       {user: users[0], test: tests[0], current_question: questions[0]}
-                                       ])
+                     {user: users[0], test: tests[0], current_question: questions[0]}
+                     ])

@@ -1,0 +1,26 @@
+<h2>Test ID:<%= @test.id %></h2>
+<p><%=@test.title %></p>
+<p>Level: <%= @test.level %></p>
+
+<div>
+  <td><%= link_to "Create New Question for Test #{@test.id}", new_admin_test_question_path(@test) %></td>
+</div>
+
+<div>
+  <p>Test's author <%= @test.author.email %></p>
+  <table border="1">
+    <tr>
+      <th>Question ID:</th>
+      <th>Body: </th>
+      <th>Delete: </th>
+    </tr>
+    <%= render partial: 'questions', collection: @test.questions %>
+  </table>
+</div>
+
+<div>
+  <%= link_to 'Back', admin_tests_path %>
+</div>
+<div>
+  <%= link_to 'Edit Test', edit_admin_test_path(@test)%>
+</div>

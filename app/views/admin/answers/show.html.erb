@@ -1,0 +1,18 @@
+<h1>Question</h1>
+
+<p>
+  <%= @answer.question.body %>
+</p>
+
+<p>
+  <b>Ответ:</b>
+  <%= @answer.title %>
+</p>
+
+<p>
+  <b>Правильность:</b>
+  <%= @answer.correct ? "True" : "False" %>
+</p>
+
+<%= link_to 'Edit Answer', edit_admin_answer_path(@answer) %> |
+<%= link_to 'Back', admin_question_path(@answer.question) %>
