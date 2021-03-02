@@ -1,6 +1,6 @@
 class GistQuestionService
 
-  ACCESS_TOKEN = ENV['GIT_TOKEN']
+  ACCESS_TOKEN = ENV['GIT_ACCESS_TOKEN']
 
   def initialize(question, client: nil)
     @question = question
@@ -9,10 +9,16 @@ class GistQuestionService
   end
 
   def call
-    @client.create_gist(gist_params)
+    @client.create_gist(gist_params)   # https://docs.github.com/en/rest/reference/gists#create-a-gist
   end
 
+  def success?
+    @client.last_response.status == 201
+  end
 
+  def url
+    @client.last_response.headers[:location]
+  end
 
   private
 
@@ -28,9 +34,7 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.body]
-    content += @question.answers.pluck(:title)
-    content.join("\n")
+    [@question.body, *@question.answers.pluck(:title)].join("\n")
   end
 
 end

@@ -32,7 +32,7 @@
 en:
   hello: "Hello world"
 
-  test_passages:
-    gist:
+  gists:
+    create:
       success: "Gist saved successfully!"
       failure: "Error occured during saving gist"

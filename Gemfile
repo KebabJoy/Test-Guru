@@ -26,9 +26,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.0'
 
 # NETWORKING
-gem 'faraday'
 gem "octokit", "~> 4.0"
 
+gem 'dotenv-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
