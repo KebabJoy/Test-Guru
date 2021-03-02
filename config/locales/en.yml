@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+
+  test_passages:
+    gist:
+      success: "Gist saved successfully!"
+      failure: "Error occured during saving gist"
