@@ -12,7 +12,7 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
-  
+
 
   private
 
