@@ -6,7 +6,7 @@ class GistsController < ApplicationController
 
     if service.success?
       Gist.create!(user: current_user, question: test_passage.current_question, url: result.html_url)
-      flash_options = {notice: "#{ActionController::Base.helpers.link_to(t('.success'), result.html_url, target: '_blank')}"}
+      flash_options = {notice: "#{view_context.link_to(t('.success'), result.html_url, target: '_blank')}"}
     else
       flash_options = {alert: t('.failure')}
     end
