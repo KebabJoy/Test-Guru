@@ -5,8 +5,8 @@ class GistsController < ApplicationController
     result = service.call
 
     if service.success?
-      Gist.create!(user: current_user, question_id: test_passage.current_question.id, url: result.url)
-      flash_options = {notice: t('.success', url: result.url)}
+      Gist.create!(user: current_user, question: test_passage.current_question, url: result.html_url)
+      flash_options = {notice: t('.success', url: result.html_url)}
     else
       flash_options = {alert: t('.failure')}
     end

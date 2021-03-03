@@ -45,4 +45,5 @@ Gemfile.lock
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-app/.env
+.env
+.env

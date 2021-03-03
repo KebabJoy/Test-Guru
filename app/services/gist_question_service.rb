@@ -2,6 +2,8 @@ class GistQuestionService
 
   ACCESS_TOKEN = ENV['GIT_ACCESS_TOKEN']
 
+  GistInfo = Struct.new(:url)
+
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
@@ -9,15 +11,11 @@ class GistQuestionService
   end
 
   def call
-    @client.create_gist(gist_params)   # https://docs.github.com/en/rest/reference/gists#create-a-gist
+    gist = @client.create_gist(gist_params)   # https://docs.github.com/en/rest/reference/gists#create-a-gist
   end
 
   def success?
-    @client.last_response.status == 201
-  end
-
-  def url
-    @client.last_response.headers[:location]
+    @client.last_response.status
   end
 
   private
