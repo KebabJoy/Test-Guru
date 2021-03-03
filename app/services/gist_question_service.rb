@@ -12,7 +12,7 @@ class GistQuestionService
 
   def call
     gist = @client.create_gist(gist_params)   # https://docs.github.com/en/rest/reference/gists#create-a-gist
-    GistInfo.new(gist.html_url, @client.last_response.status)
+    GistInfo.new(gist.html_url, @client.last_response.status == 201)
   end
 
   private
