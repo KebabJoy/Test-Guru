@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('.user') %></th>
+      <th><%= t('.question') %></th>
+      <th><%= t('.url') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%=render @gists %>
+  </tbody>
+</table>
+
+

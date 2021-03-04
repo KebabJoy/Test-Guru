@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/admin' => 'admin/tests#index', as: :admin_root
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
-             controllers: { sessions: 'sessions', registrations: 'registrations'}
+             controllers: { sessions: 'sessions'}
 
   resources :tests, only: :index do
     member do
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :test_passages, only: %i[show update] do
+    resources :gists, only: :create
     member do
       get :result
     end
@@ -24,5 +25,6 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+    resources :gists, only: %i[index]
   end
 end

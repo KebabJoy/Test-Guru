@@ -31,3 +31,16 @@
 
 en:
   hello: "Hello world"
+
+  gists:
+    create:
+      success: "Gist saved successfully!"
+      failure: "Error occurred during saving gist"
+
+  admin:
+    gists:
+      index:
+        user: "User"
+        question: "Question"
+        url: "Url"
+
