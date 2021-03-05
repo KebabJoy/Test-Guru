@@ -1,17 +1,16 @@
 document.addEventListener('turbolinks:load',function (){
-    var control = document.querySelector('.password_confirmation input[id=user_password_confirmation]')
+    let control = document.querySelector('.password_confirmation input[id=user_password_confirmation]')
 
     if(control) { control.addEventListener('input', passwordConfirmation)}
 })
 
 function passwordConfirmation(){
 
-    var password = document.querySelector('.password input')
-    var password_confirmation = document.querySelector('.password_confirmation input')
-    var correct_icon = document.querySelector('.octicon-check-circle')
-    var fail_icon = document.querySelector('.octicon-circle-slash')
-    console.log(password.value)
-    console.log(password_confirmation.value)
+    let password = document.querySelector('.password input')
+    let password_confirmation = document.querySelector('.password_confirmation input')
+    let correct_icon = document.querySelector('.octicon-check-circle')
+    let fail_icon = document.querySelector('.octicon-circle-slash')
+
 
     if (password_confirmation.value == ""){
         correct_icon.classList.add('hide')
@@ -23,6 +22,4 @@ function passwordConfirmation(){
         correct_icon.classList.add('hide')
         fail_icon.classList.remove('hide')
     }
-
-
 }
