@@ -10,7 +10,8 @@ function sortRowsByTitle(){
     // NodeList
     const rows = table.querySelectorAll('tr')
     let sortedRows = []
-
+    const sortedTable = document.createElement('table')
+    
     if(this.querySelector('.octicon-arrow-up').classList.contains('hide')){
         sortedRows = Array.from(table.rows)
             .slice(1)
@@ -24,8 +25,6 @@ function sortRowsByTitle(){
         this.querySelector('.octicon-arrow-down').classList.remove('hide')
         this.querySelector('.octicon-arrow-up').classList.add('hide')
     }
-
-    const sortedTable = document.createElement('table')
 
     sortedTable.classList.add('table')
     sortedTable.appendChild(rows[0])
