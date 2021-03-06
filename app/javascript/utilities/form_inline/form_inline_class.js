@@ -8,16 +8,18 @@ export default class FormHandler{
 
     formInlineHandler(){
         this.link = document.querySelector('.form-inline-link[data-test-id="' + this.testId + '"]')
-        this.$testTitle = $('.test-title[data-test-id="' + this.testId + '"]')
-        this.$formInline = $('.form-inline[data-test-id="' + this.testId + '"]')
+        if(this.link != null) {
+            this.$testTitle = $('.test-title[data-test-id="' + this.testId + '"]')
+            this.$formInline = $('.form-inline[data-test-id="' + this.testId + '"]')
 
-        this.$testTitle.toggle()
-        this.$formInline.toggle()
+            this.$testTitle.toggle()
+            this.$formInline.toggle()
 
-        if(this.$formInline.is(':visible')){
-            this.link.textContent = 'Cancel'
-        }else {
-            this.link.textContent = 'Edit'
+            if (this.$formInline.is(':visible')) {
+                this.link.textContent = 'Cancel'
+            } else {
+                this.link.textContent = 'Edit'
+            }
         }
     }
 
