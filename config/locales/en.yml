@@ -32,12 +32,21 @@
 en:
   hello: "Hello world"
 
+
   gists:
     create:
       success: "Gist saved successfully!"
       failure: "Error occurred during saving gist"
 
+
   admin:
+    tests:
+      index:
+        header: "Available tests"
+      create:
+        success: "Test is created"
+      form_inline:
+        submit: "OK"
     gists:
       index:
         user: "User"

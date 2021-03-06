@@ -1,6 +1,8 @@
-<h1>Tricky tests</h1>
+<h1><%= t('.header') %></h1>
 
 <%= link_to 'New Test', new_admin_test_path %>
+
+<%= render 'shared/errors', resource: @test %>
 
 <table class="table">
   <tr>
