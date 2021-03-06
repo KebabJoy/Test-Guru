@@ -3,8 +3,8 @@ document.addEventListener('turbolinks:load', function (){
 
 
    if(bar){
-      const bardata = bar.dataset
-      const progress = parseFloat(bardata.currentQuestionNumber) * 100 / parseFloat(bardata.questionsCount)
+      const bar_data = bar.dataset
+      const progress = parseFloat(bar_data.currentQuestionNumber) * 100 / parseFloat(bar_data.questionsCount)
 
       bar.textContent = progress + '%'
       bar.style.width = progress + '%'
