@@ -1,0 +1,11 @@
+.pointer{
+  cursor: pointer;
+}
+
+.hide{
+  display: none;
+}
+
+*, *::before, *::after {
+  box-sizing: content-box;
+}

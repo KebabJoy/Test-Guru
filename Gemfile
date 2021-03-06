@@ -30,6 +30,11 @@ gem "octokit", "~> 4.0"
 
 gem 'dotenv-rails'
 
+# UI
+gem 'octicons_helper'
+gem 'bootstrap', '~> 5.0.0.beta2'
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

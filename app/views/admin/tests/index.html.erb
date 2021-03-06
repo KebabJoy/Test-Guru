@@ -2,9 +2,13 @@
 
 <%= link_to 'New Test', new_admin_test_path %>
 
-<table>
+<table class="table">
   <tr>
-    <th>Title</th>
+    <th class="sort-by-title pointer">
+      Title
+      <%= octicon 'arrow-up', class: 'text-success' %>
+      <%= octicon 'arrow-down', class: 'hide text-success' %>
+    </th>
     <th>Level</th>
     <th>Author</th>
     <th>Questions</th>

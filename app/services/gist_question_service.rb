@@ -1,6 +1,6 @@
 class GistQuestionService
 
-  ACCESS_TOKEN = ENV['GIT_ACCESS_TOKEN']
+  ACCESS_TOKEN = ENV.fetch('GIT_ACCESS_TOKEN')
 
   GistInfo = Struct.new(:url, :success?)
 
