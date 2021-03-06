@@ -1,4 +1,4 @@
-class SortingTable{
+export default class SortingTable{
     constructor(control){
         this.control = control
         this.table = document.querySelector('table')
@@ -7,7 +7,7 @@ class SortingTable{
         this.sortedTable = document.createElement('table')
         this.arrowUp = this.table.querySelector('.octicon-arrow-up')
         this.arrowDown = this.table.querySelector('.octicon-arrow-down')
-        
+
         this.setup()
     }
 
@@ -40,14 +40,4 @@ class SortingTable{
         })
     }
 }
-
-
-document.addEventListener('turbolinks:load', function(){
-    const control = document.querySelector('.sort-by-title')
-
-    if (control) new SortingTable(control)
-})
-
-
-
 
