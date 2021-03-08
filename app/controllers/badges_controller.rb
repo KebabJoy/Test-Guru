@@ -1,14 +1,7 @@
 class BadgesController < ApplicationController
 
   def index
+    @current_user = current_user
     @badges = Badge.all
-  end
-
-  def edit; end
-
-  private
-
-  def set_badge
-    @badge = Badge.find(params[:id])
   end
 end

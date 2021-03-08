@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <%= badge.name %>
+    <% if achieved?(badge) %>
+      <h3>Not Achieved</h3>
+    <% end %>
+  </td>
+  <td>
+    <%= image_tag badge.img_url, class:"achievement", data: {achieved: achieved?(badge)} %>
+  </td>
+  <td><%= t(badge.rule) %></td>
+</tr>

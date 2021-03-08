@@ -35,11 +35,12 @@ Answer.create!([
                 { title: "White", correct: true, question: questions[1] }
                ])
 
-TestPassage.create!([
-                     {user: users[0], test: tests[0], current_question: questions[0]}
-                     ])
 
 Badge.create!([
                 { name: "1st try success", img_url: "https://png.pngtree.com/element_our/sm/20180602/sm_5b12bb7c33539.jpg",
-                  rule: Badge::RULES.first }
+                  rule: Badge::RULES.first },
+                { name: "All tests of a lvl", img_url: "https://cdn4.iconfinder.com/data/icons/badges-9/66/31-512.png",
+                  rule: Badge::RULES[1] },
+                { name: "All tests of a lvl", img_url: "https://cdn.imgbin.com/14/19/3/imgbin-computer-icons-achievement-learning-from-other-8ZG28U9JiQAAFXdAQRwA5xQcK.jpg",
+                  rule: Badge::RULES[2] }
               ])

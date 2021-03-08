@@ -5,6 +5,7 @@
   <%= render 'shared/flash' %>
   <% if user_signed_in? %>
     <div class="nav user">Welcome, <b><%= current_user.email %></b> Guru
+    <%= button_to 'View Badges', badges_path, method: :get %>
      <%= button_to 'Exit', destroy_user_session_path, method: :delete %></div>
   <% else %>
     <div class="nav user">
