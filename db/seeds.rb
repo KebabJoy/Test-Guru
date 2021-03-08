@@ -38,3 +38,8 @@ Answer.create!([
 TestPassage.create!([
                      {user: users[0], test: tests[0], current_question: questions[0]}
                      ])
+
+Badge.create!([
+                { name: "1st try success", img_url: "https://png.pngtree.com/element_our/sm/20180602/sm_5b12bb7c33539.jpg",
+                  rule: Badge::RULES.first }
+              ])

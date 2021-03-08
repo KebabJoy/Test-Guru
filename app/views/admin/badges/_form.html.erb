@@ -1,0 +1,23 @@
+<%= form_with model: [:admin, @badge] do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img_url %>
+    <%= form.text_field :img_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rule %>
+    <%= form.select :rule, Badge::RULES.collect { |rule| t(rule)} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>

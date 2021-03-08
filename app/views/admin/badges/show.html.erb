@@ -1,0 +1,6 @@
+<h2>Badge ID:<%= @badge.id %></h2>
+<p><%=@badge.name %></p>
+<%= image_tag @badge.img_url, class: 'achievement' %>
+
+<%= button_to 'Edit', edit_admin_badge_path(@badge), method: :get %>
+<%= button_to 'Back', admin_badges_path, method: :get %>

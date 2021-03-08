@@ -32,6 +32,7 @@
 en:
   hello: "Hello world"
 
+  first_try: "First Try"
 
   gists:
     create:
@@ -40,6 +41,8 @@ en:
 
 
   admin:
+    badges:
+      first_try: "First Try"
     tests:
       index:
         header: "Available tests"
