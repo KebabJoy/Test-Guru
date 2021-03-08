@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :gists
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges
 
   def tests_passed(lvl)
     tests.where(level: lvl)

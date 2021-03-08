@@ -7,10 +7,12 @@ class Badge < ApplicationRecord
                                                   :message => 'must be a URL for GIF, JPG or PNG image.'
                                                 }
 
+  has_many :user_badges, dependent: :destroy
+  has_many :users, through: :user_badges
+
   RULES = [
     :first_try,
     :all_of_level,
     :all_from_category
   ]
-
 end
