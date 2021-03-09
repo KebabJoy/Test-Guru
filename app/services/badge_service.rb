@@ -8,34 +8,40 @@ class BadgeService
 
   def deserved_badges
     Badge.all.select do |badge|
-      send("#{badge.rule}?")
+      if badge.rule == Badge::RULES[1]
+        all_of_level?(badge.rule_lvl)
+      elsif badge.rule == Badge::RULES[2]
+        all_from_category?(badge.rule_lvl)
+      else
+        first_try?(nil)
+      end
     end
   end
 
 
   private
 
-  def first_try?
+  def first_try?(rule_lvl)
     passed_tests = TestPassage.where(test: @current_test, passed: true).count
 
     passed_tests == 1
   end
 
-  def all_from_category?
-    test_category = @current_test.category
+  def all_from_category?(rule_lvl)
 
-    all_tests_ids_by_category = Test.where(category: test_category).order(id: :asc).pluck(:id)
+    all_tests_ids_by_category = Test.where(category: rule_lvl).order(id: :asc).pluck(:id)
     passed_tests = TestPassage.where(user_id: @current_user.id).joins(:test)
-                              .where(tests: { category: test_category }, passed: true )
+                              .where(tests: { category: rule_lvl }, passed: true )
                               .select(:test_id).distinct.order(:test_id).pluck(:test_id)
 
     all_tests_ids_by_category == passed_tests
   end
 
-  def all_of_level?
-    all_tests_of_level = Test.where(level: @current_test.level).order(id: :asc).pluck(:id)
+  def all_of_level?(rule_lvl)
+
+    all_tests_of_level = Test.where(level: rule_lvl.to_i).order(id: :asc).pluck(:id)
     passed_tests = TestPassage.where(user_id: @current_user.id).joins(:test)
-                              .where(tests: { level: @current_test.level }, passed: true).select(:test_id)
+                              .where(tests: { level: rule_lvl.to_i }, passed: true).select(:test_id)
                               .distinct.order(:test_id).pluck(:test_id)
 
     all_tests_of_level == passed_tests

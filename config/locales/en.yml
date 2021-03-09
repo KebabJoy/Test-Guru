@@ -33,6 +33,8 @@ en:
   hello: "Hello world"
 
   first_try: "First Try"
+  all_of_level: "All Of Level"
+  all_from_category: "All from Category"
 
   gists:
     create:

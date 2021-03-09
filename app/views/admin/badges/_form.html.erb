@@ -1,4 +1,4 @@
-<%= form_with model: [:admin, @badge] do |form| %>
+<%= form_with model: [:admin, @badge], html: {id:"new_badge"} do |form| %>
   <%= render 'shared/errors', resource: @badge %>
 
   <div class="field">
@@ -11,9 +11,19 @@
     <%= form.text_field :img_url %>
   </div>
 
-  <div class="field">
+  <div class="field rule-select">
     <%= form.label :rule %>
     <%= form.select :rule, Badge::RULES.collect { |rule| t(rule)} %>
+  </div>
+
+  <div class="field hide level-selection">
+    <%= form.label :rule_lvl %>
+    <%= form.number_field :rule_lvl %>
+  </div>
+
+  <div class="field hide category-selection">
+    <%= form.label :rule_lvl %>
+    <%= form.collection_select :rule_lvl, Category.all, :id, :title, prompt: true %>
   </div>
 
   <div class="actions">

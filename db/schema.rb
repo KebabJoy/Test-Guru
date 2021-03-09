@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_03_08_133231) do
     t.string "name", null: false
     t.string "img_url", null: false
     t.string "rule", null: false
+    t.string "rule_lvl"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
