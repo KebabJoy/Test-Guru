@@ -5,6 +5,9 @@ class Badge < ApplicationRecord
     :all_of_level,
     :all_from_category
   ]
+  
+  has_many :user_badges, dependent: :destroy
+  has_many :users, through: :user_badges
 
   validates :name, presence: true
   validates :rule, presence: true
@@ -13,6 +16,4 @@ class Badge < ApplicationRecord
                                                   :message => 'must be a URL for GIF, JPG or PNG image.'
                                                 }
 
-  has_many :user_badges, dependent: :destroy
-  has_many :users, through: :user_badges
 end
