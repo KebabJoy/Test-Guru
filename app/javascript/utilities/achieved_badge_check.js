@@ -3,7 +3,7 @@ document.addEventListener('turbolinks:load',function (){
 
     if(badges){
         badges.forEach(element => {
-            if(element.dataset.achieved == "true"){
+            if(element.dataset.achieved != "true"){
                 element.classList.add('not-achieved')
             }
         })

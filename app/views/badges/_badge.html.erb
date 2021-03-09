@@ -1,7 +1,7 @@
 <tr>
   <td>
     <%= badge.name %>
-    <% if achieved?(badge) %>
+    <% if !achieved?(badge) %>
       <h3>Not Achieved</h3>
     <% end %>
   </td>
