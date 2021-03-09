@@ -1,5 +1,11 @@
 class Badge < ApplicationRecord
 
+  enum rules: [
+    :first_try ,
+    :all_of_level,
+    :all_from_category
+  ]
+
   validates :name, presence: true
   validates :rule, presence: true
   validates :img_url, presence: true, :format => {
@@ -9,10 +15,4 @@ class Badge < ApplicationRecord
 
   has_many :user_badges, dependent: :destroy
   has_many :users, through: :user_badges
-
-  RULES = [
-    :first_try,
-    :all_of_level,
-    :all_from_category
-  ]
 end

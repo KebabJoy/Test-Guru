@@ -38,9 +38,9 @@ Answer.create!([
 
 Badge.create!([
                 { name: "1st try success", img_url: "https://png.pngtree.com/element_our/sm/20180602/sm_5b12bb7c33539.jpg",
-                  rule: Badge::RULES.first },
+                  rule: Badge.rules.key(0) },
                 { name: "All tests of a lvl", img_url: "https://cdn4.iconfinder.com/data/icons/badges-9/66/31-512.png",
-                  rule: Badge::RULES[1] },
+                  rule: Badge.rules.key(1), rule_value: 12 },
                 { name: "All tests of a lvl", img_url: "https://cdn.imgbin.com/14/19/3/imgbin-computer-icons-achievement-learning-from-other-8ZG28U9JiQAAFXdAQRwA5xQcK.jpg",
-                  rule: Badge::RULES[2] }
+                  rule: Badge.rules.key(2), rule_value: "Chemistry" }
               ])

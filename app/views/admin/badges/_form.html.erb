@@ -13,17 +13,12 @@
 
   <div class="field rule-select">
     <%= form.label :rule %>
-    <%= form.select :rule, Badge::RULES.collect { |rule| t(rule)} %>
+    <%= form.select :rule, Badge.rules.keys.map { |rule| t(rule) } %>
   </div>
 
-  <div class="field hide level-selection">
-    <%= form.label :rule_lvl %>
-    <%= form.number_field :rule_lvl %>
-  </div>
-
-  <div class="field hide category-selection">
-    <%= form.label :rule_lvl %>
-    <%= form.collection_select :rule_lvl, Category.all, :id, :title, prompt: true %>
+  <div class="field">
+    <%= form.label :rule_value %>
+    <%= form.text_field :rule_value %>
   </div>
 
   <div class="actions">
