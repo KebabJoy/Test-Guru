@@ -43,7 +43,9 @@ Answer.create!([
                 { title: "C#", question: questions[4] },
                 { title: "Struct to save data", correct: true, question: questions[5] },
                 { title: "Language", question: questions[5] },
+                { title: "Algorithm", correct: true, question: questions[3] },
                 { title: "White", correct: true, question: questions[1] }
+
                ])
 
 
@@ -52,6 +54,6 @@ Badge.create!([
                   rule: Badge.rules.key(0) },
                 { name: "All tests of a lvl", img_url: "https://cdn4.iconfinder.com/data/icons/badges-9/66/31-512.png",
                   rule: Badge.rules.key(1), rule_value: tests[0].level },
-                { name: "All tests of a lvl", img_url: "https://cdn.imgbin.com/14/19/3/imgbin-computer-icons-achievement-learning-from-other-8ZG28U9JiQAAFXdAQRwA5xQcK.jpg",
-                  rule: Badge.rules.key(2), rule_value: categories[0].id }
+                { name: "All tests from a Category", img_url: "https://cdn.imgbin.com/14/19/3/imgbin-computer-icons-achievement-learning-from-other-8ZG28U9JiQAAFXdAQRwA5xQcK.jpg",
+                  rule: Badge.rules.key(2), rule_value: categories[1].id }
               ])
