@@ -20,7 +20,7 @@ users = User.create!([
 tests = Test.create!([
                       { title: "ICPC", level: 7, category: categories[0], author: users[1] },
                       { title: "MIPT olympiad", level: 4, category: categories[1], author: users[0] },
-                      { title: "Backend", level: 1, categoriy: categories[0], author: users[0] }
+                      { title: "Backend", level: 1, category: categories[0], author: users[0] }
                       ])
 
 
