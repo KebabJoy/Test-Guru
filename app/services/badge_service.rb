@@ -15,7 +15,7 @@ class BadgeService
   private
 
   def first_try?(badge)
-    passed_tests = TestPassage.where(test: @current_test, passed: true).count
+    passed_tests = TestPassage.where(user: @current_user, test: @current_test, passed: true).count
 
     passed_tests == 1
   end
