@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1><% t('.badges') %></h1>
+<h1><% t('.badges') %></h1><br>
+
+<%= link_to 'New Badge', new_admin_badge_path %>
 
 <table class="table">
   <tr>
@@ -14,6 +16,4 @@
   <%= render @badges %>
 </table>
 
-<br>
 
-<%= link_to 'New Badge', new_admin_badge_path %>
