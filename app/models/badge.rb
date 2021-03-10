@@ -4,7 +4,7 @@ class Badge < ApplicationRecord
     :first_try ,
     :all_of_level,
     :all_from_category
-  ]
+  ].freeze
   
   has_many :user_badges, dependent: :destroy
   has_many :users, through: :user_badges

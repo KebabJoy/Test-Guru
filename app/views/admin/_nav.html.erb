@@ -1,7 +1,11 @@
-<%= render 'shared/header' %>
+<h1><%= link_to t('admin.panel'), admin_root_path %></h1>
+
 <div class="nav nav-admin">
-  <span class="nav-admin user">TestGuru Admin Panel</span>
-  <div class="nav-admin user">Welcome, <b class="nav-admin user-email"><%= current_user.email %></b>
+  <span class="nav-admin user"><%= t('admin.panel') %></span>
+  <div class="nav-admin user">
+    <%= t('welcome') %>
+    <b class="nav-admin user-email"><%= current_user.email %></b>
     <%= link_to 'LogOut', destroy_user_session_path, method: :delete %>
   </div>
 </div>
+<%= button_to 'View Badges', admin_badges_path, method: :get %>

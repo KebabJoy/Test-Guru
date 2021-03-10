@@ -23,7 +23,7 @@ class BadgeService
 
   def all_from_category?(badge)
 
-    all_tests_ids_by_category = Test.where(category: badge.rule_value).order(id: :asc).pluck(:id)
+    all_tests_ids_by_category = Test.where(category_id: badge.rule_value).order(id: :asc).pluck(:id)
     passed_tests = TestPassage.where(user_id: @current_user.id, created_at: last_badge_date(badge.rule.to_s)..Time.current)
                               .joins(:test)
                               .where(tests: { category: badge.rule_value }, passed: true )
