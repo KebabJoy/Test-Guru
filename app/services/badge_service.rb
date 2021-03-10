@@ -49,13 +49,13 @@ class BadgeService
   end
 
   def get_method_name(badge_rule)
-    badge_rule.gsub(/\s+/, "_").downcase.to_sym + '?'
+    badge_rule.gsub(/\s+/, "_").downcase + '?'
   end
 
   def last_badge_date(rule)
     last_badge = UserBadge.where(user_id: @current_user.id)
                           .joins(:badge)
-                          .where(rule: rule)
+                          .where(badges: { rule: rule })
                           .order("created_at")
                           .last
 
