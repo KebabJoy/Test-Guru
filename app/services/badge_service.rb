@@ -8,7 +8,7 @@ class BadgeService
 
   def deserved_badges
     Badge.all.select do |badge|
-      send("#{get_method_name(badge.rule)}?", badge)
+      send(get_method_name(badge.rule), badge)
     end
   end
 
@@ -49,7 +49,7 @@ class BadgeService
   end
 
   def get_method_name(badge_rule)
-    badge_rule.gsub(/\s+/, "_").downcase.to_sym
+    badge_rule.gsub(/\s+/, "_").downcase.to_sym + '?'
   end
 
   def last_badge_date(rule)
