@@ -1,6 +1,6 @@
 <h1>Pass the <%= @test_passage.test.title %> <%= question_counter %></h1>
 
-<h3>Progress:</h3>
+<h3><%=t('.progress_bar')%></h3>
 <div class="progress" style="height: 40px;">
   <%= content_tag :div, '', class: 'progress-bar', html: {style: 'width: 0%'},
                   data: { current_question_number: @test_passage.current_question_number - 1,

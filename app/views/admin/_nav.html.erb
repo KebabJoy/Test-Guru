@@ -5,7 +5,7 @@
   <div class="nav-admin user">
     <%= t('welcome') %>
     <b class="nav-admin user-email"><%= current_user.email %></b>
-    <%= link_to 'LogOut', destroy_user_session_path, method: :delete %>
+    <%= link_to t('logout'), destroy_user_session_path, method: :delete %>
   </div>
 </div>
-<%= button_to 'View Badges', admin_badges_path, method: :get %>
+<%= button_to t('view_badges_button'), admin_badges_path, method: :get %>

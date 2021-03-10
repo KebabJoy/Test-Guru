@@ -36,6 +36,8 @@ en:
   link: "Study project with online-school Thinknetica"
   link_description: "for creation and passing tests"
 
+  logout: "LogOut"
+  view_badges_button: "View Badged"
 
   welcome: "Welcome,"
   gists:
@@ -58,7 +60,26 @@ en:
       all_from_category: "All From Category"
       all_of_level: "All Of Level"
 
+  test_passages:
+    show:
+      progress_bar: "Progress:"
+
+  tests:
+    index:
+      level: "Level"
+      author: "Author"
+      questions: "Questions"
+      actions: "Actions"
+    test:
+      start: "Start"
+
   admin:
+    gists:
+      index:
+        title: "Gists"
+        user: "User"
+        question: "Question"
+        url: "URL"
     tests:
       index:
         header: "Tests"
@@ -72,6 +93,11 @@ en:
         name: "Name"
         rule: "Rule"
         img: "Image"
+      edit:
+        title: "Edit badge"
+      new:
+        title: "New badge"
+
 
   badges:
     index:
