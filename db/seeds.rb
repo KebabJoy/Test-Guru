@@ -25,11 +25,11 @@ tests = Test.create!([
 
 
 questions = Question.create!([
-                            { body: "The Knapsack problem", test_id: tests[0] },
-                            { body: "What color is NaOH?", test_id: tests[1]  },
-                            { body: "What is dp[i][j]?", test_id: tests[0]  },
-                            { body: "What is dfs?", test_id: tests[0]  },
-                            { body: "Which language is used to build this app?", test_id: tests[2]  },
+                            { body: "The Knapsack problem", test: tests[0] },
+                            { body: "What color is NaOH?", test: tests[1]  },
+                            { body: "What is dp[i][j]?", test: tests[0]  },
+                            { body: "What is dfs?", test: tests[0]  },
+                            { body: "Which language is used to build this app?", test: tests[2]  },
                             { body: "What is database?", test: tests[2]  }
                             ])
 
