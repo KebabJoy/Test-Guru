@@ -6,15 +6,15 @@
   <td class="align-middle"><%= test_level(test) %></td>
   <td class="align-middle"><%= test.author.email %></td>
   <td class="align-middle"><%= test.questions.count %></td>
-  <td class="align-middle"><%= link_to 'Show',admin_test_path(test) %></td>
+  <td class="align-middle"><%= link_to t('show'),admin_test_path(test) %></td>
   <td class="align-middle">
-    <%= link_to 'Edit',
+    <%= link_to t('edit'),
                 edit_admin_test_path(test),
                 data: { test_id: test.id },
                 class: 'form-inline-link' %>
   </td>
   <td class="align-middle">
-    <%= link_to 'Delete',admin_test_path(test),
+    <%= link_to t('delete'),admin_test_path(test),
                 method: :delete,
                 data: {confirm: 'Are you sure?'} %>
   </td>

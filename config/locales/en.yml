@@ -35,6 +35,10 @@ en:
   project: "Project:"
   link: "Study project with online-school Thinknetica"
   link_description: "for creation and passing tests"
+  back: "Back"
+  show: "Show"
+  edit: "Edit"
+  delete: "Delete"
 
   logout: "LogOut"
   view_badges_button: "View Badged"
@@ -46,17 +50,28 @@ en:
       failure: "Error occurred during saving gist"
 
   activerecord:
+    errors:
+      models:
+        badge:
+          attributes:
+            name:
+              blank: "Can't be blank"
+            img_url:
+              blank: "Can't be blank"
+              invalid: "must be a URL for JPG or PNG image."
     attributes:
       badge:
+        name: "Name"
+        img_url: "Image URL"
+        rule: "Rule"
+        rule_value: "Rule Value"
         one: "Badge"
         all_from_category: "All From Category"
         all_of_level: "All Of Level"
         first_try: "First Try"
 
 
-  show: "Show"
-  edit: "Edit"
-  delete: "Delete"
+
 
 
 
@@ -90,10 +105,19 @@ en:
         name: "Name"
         rule: "Rule"
         img: "Image"
+        create_button: "Create Badge"
       edit:
         title: "Edit badge"
       new:
         title: "New badge"
+      answers:
+        edit:
+          title: "Editing Answer"
+        show:
+          question: "Question"
+          edit: "Edit answer"
+          correctness: "correctness:"
+          answer: "Answer:"
 
 
   badges:
