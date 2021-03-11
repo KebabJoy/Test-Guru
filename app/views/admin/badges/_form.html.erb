@@ -13,7 +13,7 @@
 
   <div class="field rule-select">
     <%= form.label :rule %>
-    <%= form.select :rule, Badge.rules.keys.map { |rule| t(rule) } %>
+    <%= form.select :rule, Badge.rules.keys.map { |rule| [t(rule), rule] } %>
   </div>
 
   <div class="field">

@@ -8,7 +8,7 @@ class BadgeService
 
   def deserved_badges
     Badge.all.select do |badge|
-      send(get_method_name(badge.rule), badge)
+      send("#{badge.rule}?", badge)
     end
   end
 
@@ -45,10 +45,6 @@ class BadgeService
                               .pluck(:test_id)
 
     all_tests_of_level == passed_tests
-  end
-
-  def get_method_name(badge_rule)
-    badge_rule.gsub(/\s+/, "_").downcase + '?'
   end
 
   def last_badge_date(rule)
