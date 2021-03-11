@@ -45,20 +45,20 @@ en:
       success: "Gist saved successfully!"
       failure: "Error occurred during saving gist"
 
+  activerecord:
+    attributes:
+      badge:
+        one: "Badge"
+        all_from_category: "All From Category"
+        all_of_level: "All Of Level"
+        first_try: "First Try"
 
-  first_try: "First Try"
-  all_of_level: "All Of Level"
-  all_from_category: "All From Category"
 
   show: "Show"
   edit: "Edit"
   delete: "Delete"
 
-  activerecord:
-    models:
-      first_try: "First Try"
-      all_from_category: "All From Category"
-      all_of_level: "All Of Level"
+
 
   test_passages:
     show:
@@ -86,9 +86,6 @@ en:
     panel: "Admin Panel"
     badges:
       index:
-        first_try: "First Try"
-        all_of_level: "All Of Level"
-        all_from_category: "All from Category"
         badges: "Badged"
         name: "Name"
         rule: "Rule"

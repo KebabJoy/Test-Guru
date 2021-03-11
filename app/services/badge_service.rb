@@ -56,5 +56,4 @@ class BadgeService
 
     last_badge ? last_badge.created_at : Time.new("00-00-00")
   end
-
 end
