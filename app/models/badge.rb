@@ -1,10 +1,10 @@
 class Badge < ApplicationRecord
 
-  enum rules: [
-    :first_try ,
-    :all_of_level,
-    :all_from_category
-  ].freeze
+  enum rules: {
+    first_try: 0 ,
+    all_of_level: 1,
+    all_from_category: 2
+  }.freeze
   
   has_many :user_badges, dependent: :destroy
   has_many :users, through: :user_badges
