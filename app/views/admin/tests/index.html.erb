@@ -11,11 +11,13 @@
       <%= octicon 'arrow-up', class: 'text-success' %>
       <%= octicon 'arrow-down', class: 'hide text-success' %>
     </th>
-    <th>Level</th>
-    <th>Author</th>
-    <th>Questions</th>
-    <th colspan="3">Actions</th>
+    <th><%= t('tests.index.level') %></th>
+    <th><%= t('author') %></th>
+    <th><%= t('tests.index.questions') %></th>
+    <th colspan="3"><%= t('tests.index.actions') %></th>
   </tr>
 
   <%= render @tests %>
 </table>
+
+

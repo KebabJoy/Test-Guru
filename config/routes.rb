@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :badges, only: :index
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'tests#index'
   get '/admin' => 'admin/tests#index', as: :admin_root
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :badges, shallow: true
     resources :tests do
       patch :update_inline, on: :member
 

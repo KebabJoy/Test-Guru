@@ -2,17 +2,17 @@
   <%= current_year %>
 </div>
 <div>
-  <h2>Автор:</h2><br>
+  <h2><%= t('author') %></h2><br>
   <p>Никита Сидоров</p>
 </div>
 <div>
   <div>
-    <p>Ссылка на проект:</p>
+    <p><%= t('project') %></p>
     <%= github_url('Test-Guru', 'https://github.com/KebabJoy/Test-Guru/tree/7th_task')%>
   </div>
   <div>
-    <%= link_to "Учебный проект в онлайн-школе Thinknetica", "thinknetica.com", target: :_blank %>  <!--можно в хэлпер засунуть, но в задании этого не сказано-->
-    <p>для создания и прохождения тестов</p>
+    <%= link_to t('link'), "thinknetica.com", target: :_blank %>  <!--можно в хэлпер засунуть, но в задании этого не сказано-->
+    <p><%= t('link_description') %></p>
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-<h1>Question</h1>
+<h1><%= t('.question')%></h1>
 
 <p>
   <%= @answer.question.body %>
@@ -10,9 +10,9 @@
 </p>
 
 <p>
-  <b>Правильность:</b>
+  <b><%= t('.correctness') %></b>
   <%= @answer.correct ? "True" : "False" %>
 </p>
 
-<%= link_to 'Edit Answer', edit_admin_answer_path(@answer) %> |
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to t('.edit'), edit_admin_answer_path(@answer) %> |
+<%= link_to t('back'), admin_question_path(@answer.question) %>

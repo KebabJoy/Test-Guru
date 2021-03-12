@@ -31,15 +31,96 @@
 
 en:
   hello: "Hello world"
+  author: "Author"
+  project: "Project:"
+  link: "Study project with online-school Thinknetica"
+  link_description: "for creation and passing tests"
+  back: "Back"
+  show: "Show"
+  edit: "Edit"
+  delete: "Delete"
 
+  logout: "LogOut"
+  view_badges_button: "View Badged"
 
+  welcome: "Welcome,"
   gists:
     create:
       success: "Gist saved successfully!"
       failure: "Error occurred during saving gist"
 
+  activerecord:
+    errors:
+      models:
+        badge:
+          attributes:
+            name:
+              blank: "Can't be blank"
+            img_url:
+              blank: "Can't be blank"
+              invalid: "must be a URL for JPG or PNG image."
+    attributes:
+      badge:
+        name: "Name"
+        img_url: "Image URL"
+        rule: "Rule"
+        rule_value: "Rule Value"
+        one: "Badge"
+        all_from_category: "All From Category"
+        all_of_level: "All Of Level"
+        first_try: "First Try"
+
+  test_passages:
+    show:
+      progress_bar: "Progress:"
+
+  tests:
+    index:
+      level: "Level"
+      author: "Author"
+      questions: "Questions"
+      actions: "Actions"
+    test:
+      start: "Start"
 
   admin:
+    gists:
+      index:
+        title: "Gists"
+        user: "User"
+        question: "Question"
+        url: "URL"
+    tests:
+      index:
+        header: "Tests"
+    panel: "Admin Panel"
+    badges:
+      index:
+        badges: "Badged"
+        name: "Name"
+        rule: "Rule"
+        img: "Image"
+        create_button: "Create Badge"
+      edit:
+        title: "Edit badge"
+      new:
+        title: "New badge"
+      answers:
+        edit:
+          title: "Editing Answer"
+        show:
+          question: "Question"
+          edit: "Edit answer"
+          correctness: "correctness:"
+          answer: "Answer:"
+
+  badges:
+    index:
+      not achieved: "Not Achieved"
+      name: "Name"
+      rule: "Rule"
+      img: "Image"
+
     tests:
       index:
         header: "Available tests"
@@ -52,4 +133,4 @@ en:
         user: "User"
         question: "Question"
         url: "Url"
-
+        

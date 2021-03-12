@@ -6,7 +6,7 @@
     <%= link_to questions.body, admin_question_path %>
   </td>
   <td>
-    <%= button_to 'Delete', admin_question_path(questions), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= button_to t('delete'), admin_question_path(questions), method: :delete, data: { confirm: 'Are you sure?' } %>
   </td>
 </tr>
 

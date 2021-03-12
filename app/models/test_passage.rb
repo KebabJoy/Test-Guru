@@ -25,6 +25,7 @@ class TestPassage < ApplicationRecord
       self.correct_questions += 1
     end
 
+    self.passed = true if success?
     save!
   end
 
