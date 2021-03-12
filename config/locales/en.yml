@@ -70,11 +70,6 @@ en:
         all_of_level: "All Of Level"
         first_try: "First Try"
 
-
-
-
-
-
   test_passages:
     show:
       progress_bar: "Progress:"
@@ -119,7 +114,6 @@ en:
           correctness: "correctness:"
           answer: "Answer:"
 
-
   badges:
     index:
       not achieved: "Not Achieved"
@@ -139,4 +133,4 @@ en:
         user: "User"
         question: "Question"
         url: "Url"
-
+        
