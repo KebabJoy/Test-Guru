@@ -8,7 +8,7 @@
 </div>
 
 <p><%= t('timer') %></p>
-<%= content_tag :span,'', class: 'timer', data: { time_left: @test_passage.time_left } do %><% end %>
+<%= content_tag :span,'', class: 'timer', data: { time_left: @test_passage.time_left } %>
 
 <p>
   <b><%= @test_passage.current_question.body %></b>
