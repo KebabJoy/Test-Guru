@@ -34,10 +34,18 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_over?
+  end
+
+  def time_left
+    (self.test.timer * 60) - (Time.now - self.created_at) unless time_over?
   end
 
   private
+
+  def time_over?
+    self.created_at - Time.now + self.test.timer * 60 <= 0
+  end
 
   def questions_left
     test.questions.order(:id).where('id > ?', current_question.id)

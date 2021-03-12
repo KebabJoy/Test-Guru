@@ -7,6 +7,9 @@
                            questions_count: @test_passage.test.questions.count } %>
 </div>
 
+<p><%= t('timer') %></p>
+<%= content_tag :span,'', class: 'timer', data: { time_left: @test_passage.time_left } do %><% end %>
+
 <p>
   <b><%= @test_passage.current_question.body %></b>
 </p>
@@ -20,5 +23,5 @@
   <% end %>
 
   <p><%= link_to 'Gist Question', test_passage_gists_path(@test_passage), method: :post %></p>
-  <p><%= form.submit 'Next'%></p>
+  <p><%= form.submit 'Next', class:'submit'%></p>
 <% end %>

@@ -19,6 +19,7 @@ window.FormHandler = FormHandler
 require("../utilities/sorting/sorting")
 require("../utilities/password_confirmation/password_confirmation")
 require("../utilities/form_inline/form_inline")
+require("../utilities/timer")
 require("../utilities/progress_bar")
 require("../utilities/achieved_badge_check")
 
