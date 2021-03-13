@@ -12,7 +12,6 @@ document.addEventListener('turbolinks:load', function (){
         seconds = 59
       }
       if(minutes <= 0 && seconds <= 0){
-        const send = document.querySelector('.submit')
         document.forms[2].submit()
       }
 
