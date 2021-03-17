@@ -39,6 +39,7 @@ en:
   show: "Show"
   edit: "Edit"
   delete: "Delete"
+  timer: "Time Left:"
 
   logout: "LogOut"
   view_badges_button: "View Badged"
